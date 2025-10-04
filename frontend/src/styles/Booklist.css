@@ -1,0 +1,168 @@
+:root {
+  --bg-color: #f4f7fb;
+  --text-color: #222;
+  --card-color: #fff;
+  --accent-color: #007bff;
+  --danger-color: #ff5c5c;
+  --backdrop-blur: blur(8px);
+}
+
+[data-theme="dark"] {
+  --bg-color: #1e1e2e;
+  --text-color: #eaeaea;
+  --card-color: #2a2a3b;
+  --accent-color: #5aa9ff;
+  --danger-color: #ff7878;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.app-container {
+  padding: 2rem;
+  min-height: 100vh;
+}
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  background: var(--card-color);
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 🌞🌙 Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  background: var(--card-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 50px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: var(--backdrop-blur);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+/* Layout */
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--card-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 350px;
+  max-width: 550px;
+  transition: background 0.3s;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  text-align: left;
+  color: var(--accent-color);
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+/* Buttons */
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 6px 10px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.edit-btn {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.edit-btn:hover {
+  opacity: 0.9;
+}
+
+.delete-btn {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+.delete-btn:hover {
+  opacity: 0.9;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button[type="submit"] {
+  background: #22c55e;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #16a34a;
+}
