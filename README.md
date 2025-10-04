@@ -50,8 +50,16 @@ go mod tidy
  ```
 
 สร้างไฟล์ .env แล้วใส่ค่าดังนี้
+ ```bash
 PORT=8080
-DATABASE_URL=postgres://username:password@localhost:5432/bookdb?sslmode=disable อย่าลืมเปลี่ยน username และ password
+DB_HOST=localhost
+DB_USER=ตั้งเอง
+DB_PASS=ตั้งเอง
+DB_NAME=bookdb
+DB_PORT=5432
+
+ ```
+อย่าลืมเปลี่ยน username และ password
 และสั่ง go 
  ```bash
 run main.go
